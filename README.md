@@ -3,17 +3,17 @@
 Esse repositório representa a implementação do BackEnd(Servidor)
  com o FrontEnd(Interface do Usuário)
  
-##-- Como Utilizar --
+## Como Utilizar 
 
 Acesse localhost:4200 para a interface gráfica
 
 
-##-- Implmentação Angular --
+## Implmentação Angular 
 
 Clique [aqui](https://github.com/Salsicha1001/AngularOficina) para saber mais sobre a implementação do angular
 
 
-##-- Implementação do Servidor --
+## Implementação do Servidor 
 
 A comunicação com o servidor é localhost:8080/< tabela >/<função>
 
@@ -61,7 +61,7 @@ Utilize as classes já desenvolvidas para o melhor entendimento desse funcioname
 
 
 
-###-- Regras para Implementação --
+### Regras para Implementação 
 
 Nunca implemente na master sem o devido cuidado
 
