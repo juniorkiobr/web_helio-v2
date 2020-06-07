@@ -1,7 +1,7 @@
 package com.company.projetoheliov2.repository;
 
-import com.company.projetoheliov2.models.Cliente;
-import com.company.projetoheliov2.repository.api.ClienteRepository;
+import com.company.projetoheliov2.models.Veiculo;
+import com.company.projetoheliov2.repository.api.VeiculoRepository;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,18 +13,18 @@ import java.util.List;
 /**Extender a BaseCrudRepository com as classes necessárias.
  * Primeiro: a entidade
  * Segundo: O serializavel do ID*/
-public class ClienteRepositoryImpl extends BaseCrudRepository<Cliente, Integer> implements ClienteRepository {
+public class VeiculoRepositoryImpl extends BaseCrudRepository<Veiculo, Integer> implements VeiculoRepository {
 
-    public ClienteRepositoryImpl() {
+    public VeiculoRepositoryImpl() {
 
     }
 
     @Override
-    public List<Cliente> findAll() {
+    public List<Veiculo> findAll() {
 
-        Query<Cliente> query = getSession().createQuery(
-                "select c from Cliente c ",
-                Cliente.class);
+        Query<Veiculo> query = getSession().createQuery(
+                "select c from Veiculo c ",
+                Veiculo.class);
         return query.list();
     }
 

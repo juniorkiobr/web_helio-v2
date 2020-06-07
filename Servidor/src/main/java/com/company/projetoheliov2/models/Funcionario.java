@@ -11,31 +11,31 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "Cliente")
+@Table(name = "Funcionario")
 @Entity
-public class Client {
-    
+public class Funcionario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    private Long cpf;
-    private String date;
-    private Long tell;
+    private String nome;
+    private Integer cpf;
+    private Date date;
+    private Integer telefone;
     private String email;
-    private String people;
 
-    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, orphanRemoval = true)
+    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Cep cep;
-    
+
     @Version
-    private Integer versao = 0;
+    private Integer versao;
 
     public Integer getId() {
         return id;
@@ -45,36 +45,36 @@ public class Client {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public Long getCpf() {
+    public Integer getCpf() {
         return cpf;
     }
 
-    public void setCpf(Long cpf) {
+    public void setCpf(Integer cpf) {
         this.cpf = cpf;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public Long getTell() {
-        return tell;
+    public Integer getTelefone() {
+        return telefone;
     }
 
-    public void setTell(Long tell) {
-        this.tell = tell;
+    public void setTelefone(Integer telefone) {
+        this.telefone = telefone;
     }
 
     public String getEmail() {
@@ -83,14 +83,6 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPeople() {
-        return people;
-    }
-
-    public void setPeople(String people) {
-        this.people = people;
     }
 
     public Cep getCep() {

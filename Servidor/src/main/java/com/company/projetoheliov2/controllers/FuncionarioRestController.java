@@ -1,7 +1,7 @@
 package com.company.projetoheliov2.controllers;
 
-import com.company.projetoheliov2.models.Funcio;
-import com.company.projetoheliov2.services.api.FuncioService;
+import com.company.projetoheliov2.models.Funcionario;
+import com.company.projetoheliov2.services.api.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 /**Extender o BaseController com as classes necessárias.
  * Primeiro: a entidade
  * Segundo: O serializavel do ID*/
-public class FuncioRestController extends BaseController<Funcio, Integer> {
+public class FuncionarioRestController extends BaseController<Funcionario, Integer> {
 
     @Autowired
-    FuncioService funcioService;
+    FuncionarioService funcionarioService;
 
     @Override
-    public FuncioService getService() {
-        return funcioService;
+    public FuncionarioService getService() {
+        return funcionarioService;
     }
 }

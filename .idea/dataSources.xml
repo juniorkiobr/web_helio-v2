@@ -7,5 +7,13 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/projeto_Helio</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="web_helio_v2/Hibernate" uuid="b860591d-8a1a-45df-8a7b-3b23e143c257">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/projeto_Helio</jdbc-url>
+    </data-source>
   </component>
 </project>

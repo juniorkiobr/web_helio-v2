@@ -7,6 +7,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="Entities" value="869b25ab-95c1-4672-b6bc-10225b77df3e" />
+          <factory-entry name="web_helio_v2" value="b860591d-8a1a-45df-8a7b-3b23e143c257" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

@@ -11,31 +11,32 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "Funcionario")
+@Table(name = "Cliente")
 @Entity
-public class Funcio {
-
+public class Cliente {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String nome;
-    private Long cpf;
-    private Date date;
-    private Long tell;
+    private String name;
+    private Integer cpf;
+    private String date;
+    private Integer telefone;
     private String email;
+    private String people;
 
-    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, orphanRemoval = true)
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private Cep cep;
-
+    private List<Cep> cep;
+    
     @Version
-    private Integer versao = 0;
+    private Integer versao;
 
     public Integer getId() {
         return id;
@@ -45,36 +46,36 @@ public class Funcio {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Long getCpf() {
+    public Integer getCpf() {
         return cpf;
     }
 
-    public void setCpf(Long cpf) {
+    public void setCpf(Integer cpf) {
         this.cpf = cpf;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Long getTell() {
-        return tell;
+    public Integer getTelefone() {
+        return telefone;
     }
 
-    public void setTell(Long tell) {
-        this.tell = tell;
+    public void setTelefone(Integer telefone) {
+        this.telefone = telefone;
     }
 
     public String getEmail() {
@@ -85,11 +86,19 @@ public class Funcio {
         this.email = email;
     }
 
-    public Cep getCep() {
+    public String getPeople() {
+        return people;
+    }
+
+    public void setPeople(String people) {
+        this.people = people;
+    }
+
+    public List<Cep> getCep() {
         return cep;
     }
 
-    public void setCep(Cep cep) {
+    public void setCep(List<Cep> cep) {
         this.cep = cep;
     }
 

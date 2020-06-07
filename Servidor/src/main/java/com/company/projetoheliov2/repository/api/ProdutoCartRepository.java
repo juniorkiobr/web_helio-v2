@@ -1,6 +1,6 @@
 package com.company.projetoheliov2.repository.api;
 
-import com.company.projetoheliov2.models.Cliente;
+import com.company.projetoheliov2.models.ProdutoCarrinho;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import java.util.List;
  *
  * Esse service são para funcões específicas da entidade,
  * ou seja que não estão presentes com outras*/
-public interface ClienteRepository extends BaseRepository<Cliente, Integer> {
+public interface ProdutoCartRepository extends BaseRepository<ProdutoCarrinho, Integer> {
 
-    List<Cliente> findAll();
+    List<ProdutoCarrinho> findAll();
 
 }

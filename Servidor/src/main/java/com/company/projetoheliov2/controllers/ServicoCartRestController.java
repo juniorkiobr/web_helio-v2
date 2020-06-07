@@ -5,26 +5,26 @@
  */
 package com.company.projetoheliov2.controllers;
 
-import com.company.projetoheliov2.models.Cliente;
-import com.company.projetoheliov2.services.api.ClienteService;
+import com.company.projetoheliov2.models.ServicoCarrinho;
+import com.company.projetoheliov2.services.api.ServicoCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = {"/clientes"},
+@RequestMapping(value = {"/carrinho-servico"},
         produces = MediaType.APPLICATION_JSON_VALUE)
 /**Extender o BaseController com as classes necessárias.
  * Primeiro: a entidade
  * Segundo: O serializavel do ID*/
-public class ClienteRestController extends BaseController<Cliente, Integer>  {
+public class ServicoCartRestController extends BaseController<ServicoCarrinho, Integer>  {
 
     @Autowired
-    ClienteService clienteService;
+    ServicoCartService service;
 
     @Override
-    public ClienteService getService() {
-        return clienteService;
+    public ServicoCartService getService() {
+        return service;
     }
 }

@@ -26,7 +26,7 @@ public class Cep {
     private String estado;
 
     @Version
-    private Integer versao = 0;
+    private Integer versao;
 
     public Integer getId() {
         return id;
